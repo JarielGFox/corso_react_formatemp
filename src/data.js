@@ -36,9 +36,9 @@ export const EXAMPLES = {
     description:
       'Components are the building blocks of React applications. A component is a self-contained module (HTML + optional CSS + JS) that renders some output.',
     code: `
-function Welcome() {
-  return <h1>Hello, World!</h1>;
-}`,
+      function Welcome() {
+      return <h1>Hello, World!</h1>;
+      }`,
   },
   jsx: {
     title: 'JSX',
