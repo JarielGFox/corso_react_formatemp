@@ -70,7 +70,7 @@ function App() {
           {/* caso due senza usare && e soluzione altrettanto valida */}
           {/* {tabContent} */}
 
-          {/* non best practice perchè && può dare problemi su valory falsy come 0 e NaN */}
+          {/* non best practice perchè && può dare problemi su valori falsy come 0 e NaN */}
           {/* 
           {!selectedTopic && <p>Please select a topic.</p>}
 
