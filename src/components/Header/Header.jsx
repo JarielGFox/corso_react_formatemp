@@ -1,15 +1,15 @@
 import reactImg from "../../assets/react-core-concepts.png";
 import "./Header.css";
 
-const reactDescription = ["Fundamental", "Crucial", "Core"];
+const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
 function genRandomInt(max) {
   return Math.floor(Math.random() * max + 1);
 }
 
-const description = reactDescription[genRandomInt(3)];
+export default function Header() {
+  const description = reactDescriptions[genRandomInt(3)];
 
-function Header() {
   //Le parentesi tonde sul return servono solo se il codice è superiore ad una riga
   return (
     <header>
@@ -22,5 +22,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
