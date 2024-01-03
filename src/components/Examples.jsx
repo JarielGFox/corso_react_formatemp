@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
+import Section from "./Section";
 
 function Examples() {
   //selectedTopic è un valore, setSelectedTopic è una funzione che aggiorna il valore di selectedTopic, useState è una funzione che restituisce il valore di selectedTopic e setSelectedTopic
@@ -28,8 +29,8 @@ function Examples() {
   }
 
   return (
-    <section id="examples">
-      <h2>Examples</h2>
+    <Section id="examples" title={"Examples"}>
+      {/* da menù in poi si tratta del {children} */}
       <menu>
         <TabButton
           isSelected={selectedTopic === "components"}
@@ -87,7 +88,7 @@ function Examples() {
               </pre>
             </div>
           )} */}
-    </section>
+    </Section>
   );
 }
 
