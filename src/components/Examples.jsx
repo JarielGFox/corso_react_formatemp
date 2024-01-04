@@ -35,6 +35,7 @@ function Examples() {
 
       {/* componente Tabs al quale passiamo come props buttons, dichiarato in Tabs.jsx */}
       {/* in buttons passiamo tutti i bottoni */}
+
       <Tabs
         buttons={
           <>
@@ -67,8 +68,6 @@ function Examples() {
       >
         {tabContent}
       </Tabs>
-
-      <menu></menu>
 
       {/* best practice da usare */}
       {/* se non esiste selectedTopic allora non facciamo nulla */}
