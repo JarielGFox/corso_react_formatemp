@@ -2,6 +2,7 @@ import { useState } from "react";
 import { EXAMPLES } from "../data";
 import TabButton from "./TabButton";
 import Section from "./Section";
+import Tabs from "./Tabs";
 
 function Examples() {
   //selectedTopic è un valore, setSelectedTopic è una funzione che aggiorna il valore di selectedTopic, useState è una funzione che restituisce il valore di selectedTopic e setSelectedTopic
@@ -31,32 +32,43 @@ function Examples() {
   return (
     <Section id="examples" title={"Examples"}>
       {/* da menù in poi si tratta del {children} */}
-      <menu>
-        <TabButton
-          isSelected={selectedTopic === "components"}
-          onClick={() => handleClick("components")}
-        >
-          Components
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "jsx"}
-          onClick={() => handleClick("jsx")}
-        >
-          JSX
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "props"}
-          onClick={() => handleClick("props")}
-        >
-          Props
-        </TabButton>
-        <TabButton
-          isSelected={selectedTopic === "state"}
-          onClick={() => handleClick("state")}
-        >
-          State
-        </TabButton>
-      </menu>
+
+      {/* componente Tabs al quale passiamo come props buttons, dichiarato in Tabs.jsx */}
+      {/* in buttons passiamo tutti i bottoni */}
+      <Tabs
+        buttons={
+          <>
+            <TabButton
+              isSelected={selectedTopic === "components"}
+              onClick={() => handleClick("components")}
+            >
+              Components
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "jsx"}
+              onClick={() => handleClick("jsx")}
+            >
+              JSX
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "props"}
+              onClick={() => handleClick("props")}
+            >
+              Props
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === "state"}
+              onClick={() => handleClick("state")}
+            >
+              State
+            </TabButton>
+          </>
+        }
+      >
+        {tabContent}
+      </Tabs>
+
+      <menu></menu>
 
       {/* best practice da usare */}
       {/* se non esiste selectedTopic allora non facciamo nulla */}
@@ -73,7 +85,6 @@ function Examples() {
           )} */}
 
       {/* caso due senza usare && e soluzione altrettanto valida */}
-      {tabContent}
 
       {/* non best practice perchè && può dare problemi su valori falsy come 0 e NaN */}
       {/* 
